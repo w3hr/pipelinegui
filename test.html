@@ -1,0 +1,31 @@
+<html>
+
+    <head>
+        <title>pipelinegui test</title>
+        <link rel="stylesheet" href="./pipelinegui.css">
+        <script src="./pipelinegui.js"></script>
+    </head>
+
+    <script>
+        var pipelinegui = new Pipelinegui();
+
+        document.addEventListener("DOMContentLoaded", function(event) { 
+        
+            pipelinegui.run('pipelineguiDiv');
+
+        });
+
+    </script>
+
+    <body style="min-height: 900px; min-width: 1200px;">
+
+        <div style="margin-left: 5vw; width: 90vw; margin-top: 5vh; height: 90vh; background-color: lightgray;" id="pipelineguiDiv">
+
+        </div>
+
+
+
+    </body>
+
+
+</html>
