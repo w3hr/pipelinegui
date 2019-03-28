@@ -1,18 +1,27 @@
+.pipeLineDiv {
+    z-index: 2;
+}
 
 .pipeLineDiv.header {
-    z-index: 2;
-    height: 30px;
     width: 100px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    height: 30px;
+    font-size: 11px;
     background-color: lightblue;
     border: 1px solid black;
-    border-bottom: none;
+    border-bottom: 1px solid gray;
 }
 
 .pipeLineDiv.body {
-    z-index: 2;
-    height: 100px;
     width: 100px;
+    height: 100px;
     background-color: lightcyan;
     border: 1px solid black;
     border-top: none;
+}
+
+.pipeLineDiv.drag {
+    opacity: .25;
 }

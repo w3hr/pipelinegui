@@ -29,10 +29,12 @@ Pipelinegui.prototype.addEventHandler = function () {
     this.Current.Div.Link.addEventListener('mousemove', this.mousemove, false);
 }
 
-Pipelinegui.prototype.createDiv = function () {
+Pipelinegui.prototype.createDiv = function (headerText) {
     var dParent = document.createElement('div');
     var dHeader = document.createElement('div');
     var dBody = document.createElement('div');
+    dHeader.innerText = headerText;
+    dParent.classList.add('pipeLineDiv');
     dHeader.classList.add('pipeLineDiv');
     dBody.classList.add('pipeLineDiv');
     dHeader.classList.add('header');
@@ -43,7 +45,7 @@ Pipelinegui.prototype.createDiv = function () {
 }
 
 Pipelinegui.prototype.appendDiv = function (options) {
-    var n = this.createDiv();
+    var n = this.createDiv('TEST');
     this.moveDiv(n, options.clientX, options.clientY);
     this.Current.Div.Link.appendChild(n);
 }
@@ -93,9 +95,13 @@ Pipelinegui.prototype.setCurrentClickedDiv = function (div) {
     if (typeof div.parentElement === 'undefined' || div.parentElement === null)
         return;
     this.Current.ClickedDiv = div.parentElement;
+    this.Current.ClickedDiv.classList.add('drag');
 }
 
 Pipelinegui.prototype.releaseCurrentClickedDiv = function () {
+    if (this.Current.ClickedDiv === null)
+        return;
+    Pipelinegui.Me.Current.ClickedDiv.classList.remove('drag');
     this.Current.ClickedDiv = null;
 }
 
