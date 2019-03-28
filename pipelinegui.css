@@ -38,6 +38,14 @@
     background-color: red;
 }
 
+.pipeLineDiv.body .dot {
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    border-radius: 180px;
+    margin: 5px;
+}
+
 .pipeLineDiv.drag {
     opacity: .25;
 }

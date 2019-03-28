@@ -35,8 +35,11 @@ Pipelinegui.prototype.createDiv = function (headerText) {
     var dBody = document.createElement('div');
     var dBodyLeft = document.createElement('div');
     var dBodyRight = document.createElement('div');
+    var dTestDot = document.createElement('div');
+    dTestDot.classList.add('dot');
     dHeader.setAttribute('title', 'boxHeader')
     dBodyLeft.classList.add('left');
+    dBodyLeft.appendChild(dTestDot);
     dBodyRight.classList.add('right');
     dHeader.innerText = headerText;
     dParent.classList.add('pipeLineDiv');
