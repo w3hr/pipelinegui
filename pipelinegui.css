@@ -16,11 +16,26 @@
 }
 
 .pipeLineDiv.body {
+    float: left;
     width: 100px;
     height: 100px;
     background-color: lightcyan;
     border: 1px solid gray;
     border-top: none;
+}
+
+.pipeLineDiv.body .left {
+    float: left;
+    width: 50%;
+    height: 100px;
+    background-color: green;
+}
+
+.pipeLineDiv.body .right {
+    float: left;
+    width: 50%;
+    height: 100px;
+    background-color: red;
 }
 
 .pipeLineDiv.drag {

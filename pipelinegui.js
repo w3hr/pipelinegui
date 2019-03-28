@@ -33,11 +33,18 @@ Pipelinegui.prototype.createDiv = function (headerText) {
     var dParent = document.createElement('div');
     var dHeader = document.createElement('div');
     var dBody = document.createElement('div');
+    var dBodyLeft = document.createElement('div');
+    var dBodyRight = document.createElement('div');
+    dHeader.setAttribute('title', 'boxHeader')
+    dBodyLeft.classList.add('left');
+    dBodyRight.classList.add('right');
     dHeader.innerText = headerText;
     dParent.classList.add('pipeLineDiv');
     dHeader.classList.add('pipeLineDiv');
     dBody.classList.add('pipeLineDiv');
     dHeader.classList.add('header');
+    dBody.appendChild(dBodyLeft);
+    dBody.appendChild(dBodyRight);
     dBody.classList.add('body');
     dParent.appendChild(dHeader);
     dParent.appendChild(dBody);
@@ -92,7 +99,7 @@ Pipelinegui.prototype.setCurrentClickedDiv = function (div) {
     //ignore "parent" div
     if (typeof div.id === 'undefined' || div.id === this.Current.Div.Id)
         return;
-    if (typeof div.parentElement === 'undefined' || div.parentElement === null)
+    if (div.title !== 'boxHeader')
         return;
     this.Current.ClickedDiv = div.parentElement;
     this.Current.ClickedDiv.classList.add('drag');
