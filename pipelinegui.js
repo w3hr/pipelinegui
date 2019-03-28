@@ -1,7 +1,5 @@
 function Pipelinegui() {
-
     Me = null;
-
     this.Current = {
         Div: {
             Id: null,
@@ -9,7 +7,6 @@ function Pipelinegui() {
         },
         ClickedDiv: null
     };
-
 }
 
 Pipelinegui.prototype.run = function (divid) {
@@ -33,13 +30,20 @@ Pipelinegui.prototype.addEventHandler = function () {
 }
 
 Pipelinegui.prototype.createDiv = function () {
-    var n = document.createElement('div');
-    return n;
+    var dParent = document.createElement('div');
+    var dHeader = document.createElement('div');
+    var dBody = document.createElement('div');
+    dHeader.classList.add('pipeLineDiv');
+    dBody.classList.add('pipeLineDiv');
+    dHeader.classList.add('header');
+    dBody.classList.add('body');
+    dParent.appendChild(dHeader);
+    dParent.appendChild(dBody);
+    return dParent;
 }
 
 Pipelinegui.prototype.appendDiv = function (options) {
     var n = this.createDiv();
-    n.classList.add('pipeLineDiv');
     this.moveDiv(n, options.clientX, options.clientY);
     this.Current.Div.Link.appendChild(n);
 }
@@ -82,12 +86,13 @@ Pipelinegui.prototype.mousemove = function (event) {
     Pipelinegui.Me.moveDiv(Pipelinegui.Me.Current.ClickedDiv, event.clientX, event.clientY);
 }
 
-
 Pipelinegui.prototype.setCurrentClickedDiv = function (div) {
     //ignore "parent" div
     if (typeof div.id === 'undefined' || div.id === this.Current.Div.Id)
         return;
-    this.Current.ClickedDiv = div;
+    if (typeof div.parentElement === 'undefined' || div.parentElement === null)
+        return;
+    this.Current.ClickedDiv = div.parentElement;
 }
 
 Pipelinegui.prototype.releaseCurrentClickedDiv = function () {
