@@ -1,7 +1,7 @@
 # pipelinegui
 pipelinegui
 
-#WIP
+# WIP
 
 maybe i need this later for a project, so i add this here
 
