@@ -8,17 +8,18 @@
     vertical-align: middle;
     text-align: center;
     height: 30px;
-    font-size: 11px;
+    font-size: 10px;
     background-color: lightblue;
-    border: 1px solid black;
+    border: 1px solid gray;
     border-bottom: 1px solid gray;
+    border-top-left-radius: 5px;
 }
 
 .pipeLineDiv.body {
     width: 100px;
     height: 100px;
     background-color: lightcyan;
-    border: 1px solid black;
+    border: 1px solid gray;
     border-top: none;
 }
 
